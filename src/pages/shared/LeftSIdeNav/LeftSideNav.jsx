@@ -13,11 +13,13 @@ const LeftSideNav = props => {
     },[])
 
     return (
-        <div className='space-y-4'>
-            <h2 className='text-2xl'>All Categories</h2>
-            {
-                categories.map(category=><Link className='block text-xl font-semibold' key={category.id} to={`/category/${category.id}`}>{category.name}</Link>)
+        <div>
+            <h2 className='text-2xl mb-6'>All Categories</h2>
+          <div className='space-y-2'>
+          {
+                categories.map(category=><Link className='block text-xl font-semibold align-start' key={category.id} to={`/category/${category.id}`}>{category.name}</Link>)
             }
+          </div>
         </div>
     );
 };

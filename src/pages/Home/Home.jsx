@@ -12,7 +12,6 @@ const Home = props => {
             <Header></Header>
             <BreakingNews></BreakingNews>
             <Navbar></Navbar>
-            <h2>Home</h2>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
                 <div className='border text-center'>
                     <LeftSideNav></LeftSideNav>
