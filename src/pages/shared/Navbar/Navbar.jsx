@@ -6,9 +6,9 @@ import userDefaultPic from '../../../assets/user.png'
 const Navbar = () => {
 
     const links = <>
-    <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/about">About</NavLink></li>
-    <li><NavLink to="/career">Career</NavLink></li>
+    <li className='bg-gray-500 rounded text-white m-2'><NavLink to="/">Home</NavLink></li>
+    <li className='bg-gray-500 rounded text-white m-2'><NavLink to="/about">About</NavLink></li>
+    <li className='bg-gray-500 rounded text-white m-2'><NavLink to="/career">Career</NavLink></li>
     </>
 
     return (

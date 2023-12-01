@@ -21,7 +21,7 @@ const routes = createBrowserRouter([
             {
                 path:"/register",
                 element:<Register></Register>
-            }
+            },
         ]
     },
 ])
