@@ -1,19 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+
+  const {createUser} = useContext(AuthContext)
+
+
   const handleLogin = (e) => {
     e.preventDefault();
     // const email = e.target.email.value;
-    console.log(e.currentTarget);
+    // console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     // access form datas using formdata
     const name = form.get("name")
     const photo = form.get("photo")
     const email = form.get("email")
     const password = form.get("password")
-    console.log(name,photo,email,password);
+    // console.log(name,photo,email,password);
+
+    createUser(email,password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      console.log(user)
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
   };
   return (
     <div>

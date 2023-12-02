@@ -8,18 +8,18 @@ export const AuthContext = createContext(null)
 const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
-    const [user,setUser] = useState(null);
+    const [user,setUser] = useState([]);
 
     const createUser = (email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
     const authInfo = {
-        // user,
-        // createUser
+        user,
+        createUser
     }
     return (
-        <AuthContext.Provider>
+        <AuthContext.Provider value={authInfo}>
             {children}
         </AuthContext.Provider>
     );
