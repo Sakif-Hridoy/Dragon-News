@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
 
 const Register = () => {
-    const handleLogin = e =>{
-        e.preventDefault()
-        // const email = e.target.email.value;
-        console.log(e.currentTarget)
-        const form = new FormData(e.currentTarget)
-        // access form datas using formdata
-        console.log(form.get('email','password'))
-
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // const email = e.target.email.value;
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    // access form datas using formdata
+    const name = form.get("name")
+    const photo = form.get("photo")
+    const email = form.get("email")
+    const password = form.get("password")
+    console.log(name,photo,email,password);
+  };
   return (
     <div>
       <Navbar></Navbar>
@@ -23,22 +26,21 @@ const Register = () => {
           onSubmit={handleLogin}
           className="card-body md:w-3/4 lg:w-1/2 mx-auto"
         >
-          
-            <div className="form-control">
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  YourName
-                </a>
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
+          <div className="form-control">
+            <label className="label">
+              <a href="#" className="label-text-alt link link-hover">
+                YourName
+              </a>
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="input input-bordered"
+              required
+            />
+          </div>
+          <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
